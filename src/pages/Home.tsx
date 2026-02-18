@@ -1,44 +1,20 @@
 import { motion } from "framer-motion";
-import { ArrowDown } from "lucide-react";
 import { Link } from "react-router-dom";
+import ParallaxHero from "@/components/ParallaxHero";
 
 const Home = () => {
   return (
-    <div className="min-h-screen pt-24">
-      {/* Hero */}
-      <section className="flex flex-col items-center justify-center min-h-[85vh] px-8 text-center">
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.2 }}
-          className="mb-4 text-sm font-medium uppercase tracking-[0.3em] text-muted-foreground"
-        >
-          Designer & Developer
-        </motion.p>
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.6 }}
-          className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight tracking-tight max-w-4xl"
-        >
-          Crafting digital
-          <br />
-          <span className="text-gradient">experiences</span>
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5 }}
-          className="mt-6 max-w-lg text-lg text-muted-foreground leading-relaxed"
-        >
-          I design and build interfaces that are thoughtful, functional,
-          and built with care. Currently available for freelance.
-        </motion.p>
+    <div className="min-h-screen">
+      {/* Parallax Hero */}
+      <ParallaxHero />
+
+      {/* CTA below hero */}
+      <section className="flex flex-col items-center justify-center py-20 px-8 text-center">
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.7 }}
-          className="mt-10 flex gap-4"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="flex gap-4"
         >
           <Link
             to="/work"
@@ -52,14 +28,6 @@ const Home = () => {
           >
             Resume
           </Link>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1 }}
-          className="mt-20"
-        >
-          <ArrowDown className="w-5 h-5 text-muted-foreground animate-bounce" />
         </motion.div>
       </section>
 

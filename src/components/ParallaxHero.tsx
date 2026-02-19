@@ -1,17 +1,20 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
-import defaultBg from "@/assets/parallax-bg.png";
-import defaultMid from "@/assets/parallax-mid.png";
+import defaultBg from "@/assets/Layer 1.png";
+import defaultMid from "@/assets/Layer 2.png";
+import defaultFront from "@/assets/Layer 3.png";
 
 interface ParallaxHeroProps {
   bgImage?: string;
   midImage?: string;
+  frontImage?: string;
 }
 
 const ParallaxHero = ({
   bgImage = defaultBg,
   midImage = defaultMid,
+  frontImage = defaultFront,
 }: ParallaxHeroProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -21,11 +24,12 @@ const ParallaxHero = ({
 
   const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
   const midY = useTransform(scrollYProgress, [0, 1], ["0%", "40%"]);
+  const frontY = useTransform(scrollYProgress, [0, 1], ["0%", "60%"]);
   const textY = useTransform(scrollYProgress, [0, 1], ["0%", "80%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   return (
-    <div ref={ref} className="relative w-full h-screen overflow-hidden">
+    <div ref={ref} className="relative w-full h-screen overflow-hidden bg-black">
       {/* Background layer — slowest */}
       <motion.div
         style={{ y: bgY }}
@@ -34,11 +38,11 @@ const ParallaxHero = ({
         <img
           src={bgImage}
           alt="Background layer"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-contain object-bottom"
         />
       </motion.div>
 
-      {/* Midground layer — geometric grid */}
+      {/* Midground layer */}
       <motion.div
         style={{ y: midY }}
         className="absolute inset-0 w-full h-[140%]"
@@ -46,7 +50,19 @@ const ParallaxHero = ({
         <img
           src={midImage}
           alt="Midground layer"
-          className="w-full h-full object-cover mix-blend-screen opacity-60"
+          className="w-full h-full object-contain object-bottom"
+        />
+      </motion.div>
+
+      {/* Foreground layer */}
+      <motion.div
+        style={{ y: frontY }}
+        className="absolute inset-0 w-full h-[150%]"
+      >
+        <img
+          src={frontImage}
+          alt="Foreground layer"
+          className="w-full h-full object-contain object-bottom"
         />
       </motion.div>
 
@@ -67,20 +83,17 @@ const ParallaxHero = ({
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.6 }}
-          className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold leading-tight tracking-tight max-w-5xl text-center"
+          className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight max-w-5xl text-center"
         >
-          Designing Experiences
-          <br />
-          <span className="text-gradient">That Drive Results</span>
+          Delaney Dalpe
         </motion.h1>
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
-          className="mt-6 max-w-lg text-base sm:text-lg text-muted-foreground leading-relaxed text-center"
+          className="mt-5 max-w-lg text-sm sm:text-base text-muted-foreground leading-relaxed text-center"
         >
-          I create thoughtful digital products that balance strategy, usability,
-          and visual clarity.
+          Learn about me and the work I have done!
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 10 }}

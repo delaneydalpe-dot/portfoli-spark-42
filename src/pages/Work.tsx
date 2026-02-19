@@ -13,32 +13,65 @@ const Work = () => {
           Work
         </h1>
         <p className="text-lg text-muted-foreground max-w-lg">
-          A selection of projects I've worked on across branding, web, and product design.
+          A selection of projects across dashboard design, e-commerce, branding, and product.
         </p>
       </motion.div>
 
-      <div className="space-y-0 border-t border-border">
+      <div className="space-y-16">
         {projects.map((project, i) => (
-          <motion.div
+          <motion.article
             key={project.title}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: i * 0.08 }}
-            className="group flex items-center justify-between py-8 border-b border-border cursor-pointer hover:pl-4 transition-all duration-300"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: i * 0.1 }}
+            className="border border-border rounded-sm p-6 md:p-10 bg-card hover:border-primary/30 transition-colors"
           >
-            <div className="flex-1">
-              <h3 className="text-xl md:text-2xl font-semibold group-hover:text-primary transition-colors">
-                {project.title}
-              </h3>
-              <p className="text-sm text-muted-foreground mt-1">
-                {project.description}
-              </p>
+            <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">
+              <div>
+                <p className="text-xs font-medium uppercase tracking-wider text-primary mb-2">
+                  {project.category} — {project.year}
+                </p>
+                <h2 className="text-2xl md:text-3xl font-bold tracking-tight">
+                  {project.title}
+                </h2>
+              </div>
+              {project.hasBeforeAfter && (
+                <span className="text-xs uppercase tracking-wider text-muted-foreground border border-border px-3 py-1 rounded-sm whitespace-nowrap">
+                  Before & After
+                </span>
+              )}
             </div>
-            <div className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
-              <span className="uppercase tracking-wider">{project.category}</span>
-              <span>{project.year}</span>
+
+            <p className="text-muted-foreground leading-relaxed mb-6 max-w-2xl">
+              {project.whoAndWhy}
+            </p>
+
+            <div className="grid sm:grid-cols-2 gap-6">
+              <div>
+                <h3 className="text-xs font-medium uppercase tracking-wider text-muted-foreground mb-3">
+                  Tools Used
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {project.tools.map((tool) => (
+                    <span
+                      key={tool}
+                      className="px-3 py-1.5 text-xs font-medium bg-secondary text-secondary-foreground rounded-sm border border-border"
+                    >
+                      {tool}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <h3 className="text-xs font-medium uppercase tracking-wider text-muted-foreground mb-3">
+                  Result
+                </h3>
+                <p className="text-sm text-foreground leading-relaxed">
+                  {project.result}
+                </p>
+              </div>
             </div>
-          </motion.div>
+          </motion.article>
         ))}
       </div>
     </div>

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, MapPin, ExternalLink } from "lucide-react";
+import { Mail, MapPin, ExternalLink, Download } from "lucide-react";
 
 const experience = [
   { role: "Senior Product Designer", company: "Studio Labs", period: "2023 — Present", description: "Leading design for a suite of B2B SaaS products. Established design system used across 4 product lines." },
@@ -19,7 +19,7 @@ const education = [
 
 const Section = ({ title, children }: { title: string; children: React.ReactNode }) => (
   <div className="mb-16">
-    <h2 className="text-sm font-medium uppercase tracking-[0.3em] text-primary mb-8">
+    <h2 className="text-xs font-medium uppercase tracking-[0.3em] text-primary mb-8">
       {title}
     </h2>
     {children}
@@ -32,12 +32,15 @@ const Resume = () => {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="mb-16"
+        className="mb-8"
       >
         <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-4">
           Resume
         </h1>
-        <div className="flex flex-wrap gap-6 text-sm text-muted-foreground">
+        <p className="text-lg text-muted-foreground max-w-xl mb-6 leading-relaxed">
+          I'm a product-focused designer passionate about solving complex problems with simple, elegant solutions.
+        </p>
+        <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground mb-6">
           <span className="flex items-center gap-2">
             <MapPin className="w-4 h-4" /> New York, NY
           </span>
@@ -48,6 +51,13 @@ const Resume = () => {
             <ExternalLink className="w-4 h-4" /> LinkedIn
           </a>
         </div>
+        <a
+          href="#"
+          className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold uppercase tracking-wider bg-primary text-primary-foreground rounded-sm hover:opacity-90 transition-opacity"
+        >
+          <Download className="w-4 h-4" />
+          Download Resume
+        </a>
       </motion.div>
 
       <motion.div

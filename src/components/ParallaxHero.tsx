@@ -28,7 +28,7 @@ const ParallaxHero = ({
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   return (
-    <div ref={ref} className="relative w-screen h-screen overflow-hidden -mx-[calc((100vw-100%)/2)]">
+    <div ref={ref} className="relative w-full h-screen overflow-hidden">
       {/* Background layer — slowest */}
       <motion.div
         style={{ y: bgY }}
@@ -68,7 +68,7 @@ const ParallaxHero = ({
       {/* Hero text overlay */}
       <motion.div
         style={{ y: textY, opacity }}
-        className="absolute inset-0 flex flex-col items-center justify-center z-10"
+        className="absolute inset-0 flex flex-col items-center justify-center z-10 px-6"
       >
         <motion.p
           initial={{ opacity: 0 }}

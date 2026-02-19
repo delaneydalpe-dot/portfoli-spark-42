@@ -1,17 +1,9 @@
 import { motion } from "framer-motion";
-
-const projects = [
-  { title: "Brand Identity System", category: "Branding", year: "2025", description: "Complete visual identity for a fintech startup" },
-  { title: "E-commerce Platform", category: "Web Design", year: "2024", description: "Full-stack shopping experience with custom CMS" },
-  { title: "Mobile Banking App", category: "UI/UX Design", year: "2024", description: "iOS and Android app for a digital bank" },
-  { title: "Editorial Website", category: "Development", year: "2023", description: "Content-rich magazine built with modern web tech" },
-  { title: "SaaS Dashboard", category: "Product Design", year: "2023", description: "Analytics platform for enterprise clients" },
-  { title: "Photography Portfolio", category: "Web Design", year: "2022", description: "Minimal portfolio showcasing fine art photography" },
-];
+import { projects } from "@/data/projects";
 
 const Work = () => {
   return (
-    <div className="min-h-screen pt-32 pb-24 px-8 max-w-6xl mx-auto">
+    <div className="min-h-screen pt-32 pb-24 px-6 md:px-8 max-w-6xl mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

@@ -28,7 +28,7 @@ const Section = ({ title, children }: { title: string; children: React.ReactNode
 
 const Resume = () => {
   return (
-    <div className="min-h-screen pt-32 pb-24 px-8 max-w-4xl mx-auto">
+    <div className="min-h-screen pt-32 pb-24 px-6 md:px-8 max-w-4xl mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

@@ -46,29 +46,19 @@ const Work = () => {
               {project.whoAndWhy}
             </p>
 
-            <div className="grid sm:grid-cols-2 gap-6">
-              <div>
-                <h3 className="text-xs font-medium uppercase tracking-wider text-muted-foreground mb-3">
-                  Tools Used
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  {project.tools.map((tool) => (
-                    <span
-                      key={tool}
-                      className="px-3 py-1.5 text-xs font-medium bg-secondary text-secondary-foreground rounded-sm border border-border"
-                    >
-                      {tool}
-                    </span>
-                  ))}
-                </div>
-              </div>
-              <div>
-                <h3 className="text-xs font-medium uppercase tracking-wider text-muted-foreground mb-3">
-                  Result
-                </h3>
-                <p className="text-sm text-foreground leading-relaxed">
-                  {project.result}
-                </p>
+            <div>
+              <h3 className="text-xs font-medium uppercase tracking-wider text-muted-foreground mb-3">
+                Tools Used
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {project.tools.map((tool) => (
+                  <span
+                    key={tool}
+                    className="px-3 py-1.5 text-xs font-medium bg-secondary text-secondary-foreground rounded-sm border border-border"
+                  >
+                    {tool}
+                  </span>
+                ))}
               </div>
             </div>
           </motion.article>

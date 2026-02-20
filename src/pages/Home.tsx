@@ -39,13 +39,13 @@ const Home = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background/90" />
                 <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <p className="text-xs font-medium uppercase tracking-wider text-primary mb-1">
+                  <p className="text-xs font-medium uppercase tracking-wider text-black mb-1">
                     {project.category} — {project.year}
                   </p>
-                  <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
+                  <h3 className="text-xl font-semibold text-black group-hover:text-primary transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground mt-1">
+                  <p className="text-sm text-black/80 mt-1">
                     {project.description}
                   </p>
                 </div>

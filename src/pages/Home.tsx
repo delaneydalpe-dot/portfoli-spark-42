@@ -32,7 +32,12 @@ const Home = () => {
                 to="/work"
                 className="group relative aspect-video md:aspect-[4/3] bg-card rounded-sm overflow-hidden border border-border hover:border-primary/50 transition-colors cursor-pointer hover-lift block"
               >
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background/80" />
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background/90" />
                 <div className="absolute bottom-0 left-0 right-0 p-6">
                   <p className="text-xs font-medium uppercase tracking-wider text-primary mb-1">
                     {project.category} — {project.year}

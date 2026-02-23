@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, MapPin, Download } from "lucide-react";
+import { Mail, MapPin, Download, Phone } from "lucide-react";
 
 const experience = [
   { role: "Independent Regional A", company: "Denver, CO", period: "2025 — Present", description: "" },
@@ -43,8 +43,11 @@ const Resume = () => {
           <span className="flex items-center gap-2">
             <MapPin className="w-4 h-4" /> Lakewood, CO
           </span>
+          <a href="mailto:delaneydalpe@gmail.com" className="flex items-center gap-2 hover:text-primary transition-colors">
+            <Mail className="w-4 h-4" /> delaneydalpe@gmail.com
+          </a>
           <span className="flex items-center gap-2">
-            <Mail className="w-4 h-4" /> 2115 Dover St.
+            <Phone className="w-4 h-4" /> (720) 693-2305
           </span>
         </div>
         <a

@@ -51,7 +51,8 @@ const Resume = () => {
           </span>
         </div>
         <a
-          href="#"
+          href="/colorguard_resume.pdf"
+          download="Delaney_Dalpe_Resume.pdf"
           className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold uppercase tracking-wider bg-primary text-primary-foreground rounded-sm hover:opacity-90 transition-opacity"
         >
           <Download className="w-4 h-4" />

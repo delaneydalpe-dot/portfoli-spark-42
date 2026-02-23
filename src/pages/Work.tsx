@@ -28,7 +28,7 @@ const Work = () => {
           >
             <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">
               <div>
-                <p className="text-xs font-medium uppercase tracking-wider text-primary mb-2">
+                <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground mb-2">
                   {project.category} — {project.year}
                 </p>
                 <h2 className="text-2xl md:text-3xl font-bold tracking-tight">

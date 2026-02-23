@@ -26,20 +26,10 @@ const Work = () => {
             transition={{ delay: i * 0.1 }}
             className="border border-border rounded-sm p-6 md:p-10 bg-card hover:border-primary/30 transition-colors"
           >
-            <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">
-              <div>
-                <p className="text-xs font-medium uppercase tracking-wider text-muted-foreground mb-2">
-                  {project.category} — {project.year}
-                </p>
-                <h2 className="text-2xl md:text-3xl font-bold tracking-tight">
-                  {project.title}
-                </h2>
-              </div>
-              {project.hasBeforeAfter && (
-                <span className="text-xs uppercase tracking-wider text-muted-foreground border border-border px-3 py-1 rounded-sm whitespace-nowrap">
-                  Before & After
-                </span>
-              )}
+            <div className="mb-6">
+              <h2 className="text-2xl md:text-3xl font-bold tracking-tight">
+                {project.title}
+              </h2>
             </div>
 
             <p className="text-muted-foreground leading-relaxed mb-6 max-w-2xl">

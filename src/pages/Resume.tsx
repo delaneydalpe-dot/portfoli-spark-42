@@ -1,20 +1,19 @@
 import { motion } from "framer-motion";
-import { Mail, MapPin, ExternalLink, Download } from "lucide-react";
+import { Mail, MapPin, Download } from "lucide-react";
 
 const experience = [
-  { role: "Senior Product Designer", company: "Studio Labs", period: "2023 — Present", description: "Leading design for a suite of B2B SaaS products. Established design system used across 4 product lines." },
-  { role: "UI/UX Designer", company: "Digital Agency Co", period: "2021 — 2023", description: "Designed and shipped 20+ client projects spanning e-commerce, fintech, and healthcare." },
-  { role: "Junior Designer", company: "Creative Works", period: "2019 — 2021", description: "Contributed to branding, web design, and marketing materials for various clients." },
+  { role: "Independent Regional A", company: "Denver, CO", period: "2025 — Present", description: "" },
+  { role: "Regional A", company: "Denver, CO", period: "2020 — 2025", description: "" },
+  { role: "Cadet Class", company: "Denver, CO", period: "2014 — 2020", description: "" },
 ];
 
 const skills = [
-  "UI/UX Design", "Design Systems", "Figma", "Prototyping",
-  "React", "TypeScript", "Tailwind CSS", "Framer Motion",
-  "Branding", "Typography", "Accessibility", "User Research",
+  "Flag Skills", "Rifle Skills", "Saber Skills", "Dance Skills",
 ];
 
 const education = [
-  { degree: "B.A. in Graphic Design", school: "School of Visual Arts", year: "2019" },
+  { degree: "Jefferson Academy Secondary", school: "Broomfield, CO", year: "2023 — Present" },
+  { degree: "Jefferson Academy Elementary", school: "Westminster, CO", year: "2016 — 2022" },
 ];
 
 const Section = ({ title, children }: { title: string; children: React.ReactNode }) => (
@@ -35,21 +34,18 @@ const Resume = () => {
         className="mb-8"
       >
         <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-4">
-          Resume
+          Delaney Dalpe
         </h1>
         <p className="text-lg text-muted-foreground max-w-xl mb-6 leading-relaxed">
-          I'm a product-focused designer passionate about solving complex problems with simple, elegant solutions.
+          I am a very good team member. I am able to overcome and overgrow challenges that come my way. I am very good with social interactions and hand-eye coordination. I am very passionate about pursuing colorguard. I have done it for pretty much my whole life, and I would love to continue.
         </p>
         <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground mb-6">
           <span className="flex items-center gap-2">
-            <MapPin className="w-4 h-4" /> New York, NY
+            <MapPin className="w-4 h-4" /> Lakewood, CO
           </span>
           <span className="flex items-center gap-2">
-            <Mail className="w-4 h-4" /> hello@portfolio.com
+            <Mail className="w-4 h-4" /> 2115 Dover St.
           </span>
-          <a href="#" className="flex items-center gap-2 hover:text-primary transition-colors">
-            <ExternalLink className="w-4 h-4" /> LinkedIn
-          </a>
         </div>
         <a
           href="#"

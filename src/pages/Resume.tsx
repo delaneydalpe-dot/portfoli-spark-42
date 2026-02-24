@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, MapPin, Download, Phone } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 
 const experience = [
   { role: "Independent Regional A", company: "Denver, CO", period: "2025 — Present", description: "" },
@@ -50,20 +50,6 @@ const Resume = () => {
             <Phone className="w-4 h-4" /> (720) 693-2305
           </span>
         </div>
-        <button
-          onClick={() => {
-            const link = document.createElement('a');
-            link.href = '/colorguard_resume.pdf';
-            link.download = 'Delaney_Dalpe_Resume.pdf';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-          }}
-          className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold uppercase tracking-wider bg-primary text-primary-foreground rounded-sm hover:opacity-90 transition-opacity"
-        >
-          <Download className="w-4 h-4" />
-          Download Resume
-        </button>
       </motion.div>
 
       <motion.div

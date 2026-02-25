@@ -38,7 +38,7 @@ const ParallaxHero = ({
         <img
           src={bgImage}
           alt="Background layer"
-          className="w-full h-full object-contain object-bottom"
+          className="w-full h-full object-cover object-bottom"
         />
       </motion.div>
 
@@ -50,7 +50,7 @@ const ParallaxHero = ({
         <img
           src={midImage}
           alt="Midground layer"
-          className="w-full h-full object-contain object-bottom"
+          className="w-full h-full object-cover object-bottom"
         />
       </motion.div>
 
@@ -62,7 +62,7 @@ const ParallaxHero = ({
         <img
           src={frontImage}
           alt="Foreground layer"
-          className="w-full h-full object-contain object-bottom"
+          className="w-full h-full object-cover object-bottom"
         />
       </motion.div>
 

@@ -29,7 +29,7 @@ const ParallaxHero = ({
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   return (
-    <div ref={ref} className="relative w-full h-screen overflow-hidden bg-black">
+    <div ref={ref} className="relative w-full h-screen overflow-hidden" style={{ backgroundColor: 'hsl(var(--hero-bg))' }}>
       {/* Background layer — slowest */}
       <motion.div
         style={{ y: bgY }}
